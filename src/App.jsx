@@ -1,18 +1,18 @@
 import './App.css';
-import { Routes } from 'react-router-dom';
+import {  Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Login from './Components/Login';
 import Register from './Components/Register';
-import Home from './Components/Home';
+import Form from './Components/Form'
 
 
 function App() {
   return (
     <div className="App">
     <Routes>
-      <Route path='/login' element={<Login/>}/>
       <Route path='/' element={<Register/>}/>
-<Route path='/home' element={<Home/>}/>
+      <Route path='/login' element={<Login/>}/>
+       <Route path ='/form' element={<Form/>}/>
 
     </Routes>
     </div>

@@ -1,71 +1,3 @@
-// import React, { useState } from 'react';
-// import { loginAPI } from '../Services/allAPIs'; // Assuming you have a loginAPI function
-// import {useNavigate} from 'react-router-dom'
-// import Header from './Header';
-// import Footer from './Footer';
-
-
-
-// function Login() {
-//   const location = useNavigate()
-//   const [userName, setUserName] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleUserIdChange = (e) => {
-//     setUserName(e.target.value);
-//   }
-
-//   const handlePasswordChange = (e) => {
-//     setPassword(e.target.value);
-//   }
-
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     if (!userName || !password) {
-//       alert("Please enter UserName and password");
-//     } else {
-//       try {
-//         const result = await loginAPI({ userName, password });
-//         console.log(result);
-//         if (result.status === 200) {
-//           alert("Login successful");
-//           location('/home')
-//         } else {
-//           alert(result.response.data);
-//         }
-//       } catch (error) {
-//         console.error("Error occurred:", error);
-//         alert("An error occurred while logging in. Please try again.");
-//       }
-//     }
-//   }
-
-//   return (
-//     <div>
-//       <Header/>
-//       <h2>Login</h2>
-//       <form onSubmit={handleLogin}>
-//         <div>
-//           <label>UserName:</label>
-//           <input type="email" value={userName} onChange={handleUserIdChange} />
-//         </div>
-//         <div>
-//           <label>Password:</label>
-//           <input type="password" value={password} onChange={handlePasswordChange} />
-//         </div>
-//         <button type="submit">Login</button>
-//       </form>
-//       <Footer/>
-//     </div>
-//   );
-// }
-
-// export default Login;
-
-
-
-
-
 
 
 import React, { useState } from 'react';
@@ -98,7 +30,7 @@ function Login() {
         console.log(result);
         if (result.status === 200) {
           alert("Login successful");
-          location('/home')
+          location('/form')
         } else {
           alert(result.response.data);
         }

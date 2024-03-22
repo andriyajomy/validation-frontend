@@ -4,12 +4,12 @@ import { registerAPI } from '../Services/allAPIs';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import './Register.css'; // Import CSS file for styling
+import './Register.css'; 
 
 function Register() {
   const location = useNavigate();
-  const [userName, setUserName] = useState('');
-  const [Name, setName] = useState('');
+  const [username, setUserName] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [address, setAddress] = useState('');
   const [gender, setGender] = useState('');
@@ -36,11 +36,11 @@ function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    if (!userName || !Name || !password || !address || !gender) {
+    if (!username || !name || !password || !address || !gender) {
       alert("Please fill all details");
     } else {
       try {
-        const result = await registerAPI({ userName, Name, password, address, gender });
+        const result = await registerAPI({ username, name, password, address, gender });
         console.log(result);
         if (result.status === 200) {
           alert(result.data);
@@ -59,16 +59,16 @@ function Register() {
     <div>
       <Header />
       <div className="register-container">
-        <div className="register-card">
+        <div className="register-card" style={{height:'600px',width:'450px',marginBottom:'15px'}}>
           <h2>Registration Form</h2>
           <form onSubmit={handleRegister}>
             <div className="form-group">
               <label>Username:</label>
-              <input type="email" value={userName} onChange={handleUserNameChange} />
+              <input type="email" value={username} onChange={handleUserNameChange} />
             </div>
             <div className="form-group">
               <label>Name:</label>
-              <input type="text" value={Name} onChange={handleNameChange} />
+              <input type="text" value={name} onChange={handleNameChange} />
             </div>
             <div className="form-group">
               <label>Password:</label>
